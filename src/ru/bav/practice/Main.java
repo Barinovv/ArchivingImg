@@ -6,6 +6,12 @@ import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * Класс, предназначенный для архивирования изображения в zip-архив
+ *
+ * @author Barinov 15IT18.
+ */
+
 public class Main {
 
     public static void main(String[] args) {
