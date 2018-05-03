@@ -16,13 +16,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите путь к изображению для архивации");
-        System.out.println("Например: " + "C:\\image.jpg");
-        String filename = scanner.nextLine();
+
 
         try (ZipOutputStream zola = new ZipOutputStream(new FileOutputStream("C:\\Program Files (x86)\\ready.zip"));
-             FileInputStream fis = new FileInputStream(filename)) {
+             FileInputStream fis = new FileInputStream(enter_path())) {
             ZipEntry zipEntry = new ZipEntry("image.jpg");
             zola.putNextEntry(zipEntry);
             // считываем содержимое файла в массив byte
@@ -45,6 +42,18 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
+    }
+
+    /**
+     * Метод для ввода пути для изображения
+     *
+     * @return путь до изображения
+     */
+    public static String enter_path() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите путь к изображению для архивации");
+        System.out.println("Например: " + "C:\\image.jpg");
+        return scanner.nextLine();
     }
 }
 
