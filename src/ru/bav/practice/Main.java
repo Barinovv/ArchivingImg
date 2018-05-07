@@ -15,7 +15,7 @@ public class Main {
 
 
     /**
-     * Метод для ввода пути для изображения
+     * Метод ввода пути для изображения
      *
      * @return путь до изображения
      */
@@ -54,9 +54,9 @@ public class Main {
              FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
-            ZipEntry entry1 = new ZipEntry("image.jpg"); //
+            ZipEntry entry1 = new ZipEntry("image.jpg");
 
-            zout.putNextEntry(entry1);
+            zout.putNextEntry(entry1); //добавление файла в архив
             // добавление содержимого файла в массив byte
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);
