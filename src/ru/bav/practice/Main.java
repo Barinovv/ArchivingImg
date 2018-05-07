@@ -13,10 +13,6 @@ import java.util.zip.ZipOutputStream;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Путь к архиву: "+archiving());
-
-    }
 
     /**
      * Метод для ввода пути для изображения
@@ -45,7 +41,9 @@ public class Main {
 
 
     /**
-     * Метод zip-архивации, создаёт архив и записывает в него файл.
+     * Метод zip-архивации
+     *
+     * Cоздаёт архив и записывает в него файл.
      */
     private static String archiving(){
         String name = enterPath();
@@ -73,6 +71,11 @@ public class Main {
             System.out.println(ex.getMessage());
         }
         return output;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Путь к архиву: "+archiving());
+
     }
 
 
