@@ -19,7 +19,7 @@ public class Main {
      *
      * @return путь до изображения
      */
-    public static String enterPath() {
+    public static String pathForImg() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите путь к изображению для архивации");
         System.out.println("Например: " + "C:\\image.jpg");
@@ -32,7 +32,7 @@ public class Main {
      * @return путь до архива
      */
 
-    public static String outputPath() {
+    public static String pathToArch() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите путь для сохранения архива");
         System.out.println("Например: " + "C:\\name.zip");
@@ -43,15 +43,15 @@ public class Main {
     /**
      * Метод zip-архивации
      *
-     * Cоздаёт архив и записывает в него файл.
+     * Cоздаёт архив и записывает в него изображение.
      */
     private static String archiving(){
-        String name = enterPath();
-        String output = outputPath();
+        String imgPath = pathForImg();
+        String archPath = pathToArch();
         //Создание архива
-        try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(output));
+        try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(archPath));
              //Считывание из файла
-             FileInputStream fis = new FileInputStream(name)) {
+             FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
             ZipEntry entry1 = new ZipEntry("image.jpg");
@@ -70,7 +70,7 @@ public class Main {
 
             System.out.println(ex.getMessage());
         }
-        return output;
+        return archPath;
     }
 
     public static void main(String[] args) {
