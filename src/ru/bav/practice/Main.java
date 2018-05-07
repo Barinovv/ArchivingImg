@@ -50,14 +50,14 @@ public class Main {
         String archPath = pathToArch();
         //Создание архива
         try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(archPath));
-             //Считывание из файла
+             //Считывание из файла с изображением
              FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
-            ZipEntry entry1 = new ZipEntry("image.jpg");
+            ZipEntry entry1 = new ZipEntry("image.jpg"); //
 
             zout.putNextEntry(entry1);
-            // считываем содержимое файла в массив byte
+            // добавление содержимого файла в массив byte
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);
             // добавляем содержимое к архиву
