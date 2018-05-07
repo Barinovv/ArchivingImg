@@ -49,20 +49,24 @@ public class Main {
     private static String archiving(){
         String imgPath = pathForImg();
         String archPath = pathToArch();
+
         //Создание архива
         try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(archPath));
+
              //Считывание данных из файла с изображением
              FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
             ZipEntry empty = new ZipEntry("image.jpg");
-
             zout.putNextEntry(empty); //добавление файла в архив
+
             // добавление содержимого файла в массив byte
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);
+
             // добавляем содержимое к архиву
             zout.write(buffer);
+
             // закрываем текущую запись для новой записи
             zout.closeEntry();
 
