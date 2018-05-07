@@ -45,6 +45,7 @@ public class Main {
      *
      * Cоздаёт архив и записывает в него изображение.
      */
+
     private static String archiving(){
         String imgPath = pathForImg();
         String archPath = pathToArch();
@@ -54,9 +55,9 @@ public class Main {
              FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
-            ZipEntry entry1 = new ZipEntry("image.jpg");
+            ZipEntry empty = new ZipEntry("image.jpg");
 
-            zout.putNextEntry(entry1); //добавление файла в архив
+            zout.putNextEntry(empty); //добавление файла в архив
             // добавление содержимого файла в массив byte
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);
