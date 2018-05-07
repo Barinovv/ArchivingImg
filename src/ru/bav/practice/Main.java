@@ -50,7 +50,7 @@ public class Main {
         String archPath = pathToArch();
         //Создание архива
         try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(archPath));
-             //Считывание из файла с изображением
+             //Считывание данных из файла с изображением
              FileInputStream fis = new FileInputStream(imgPath)) {
 
             //Отдельная запись в архиве
