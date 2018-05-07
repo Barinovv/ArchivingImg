@@ -1,7 +1,6 @@
 package ru.bav.practice;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 import java.util.zip.ZipEntry;
@@ -37,7 +36,7 @@ public class Main {
      * @return путь до архива
      */
 
-    public static String output_path() {
+    public static String outputPath() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите путь для сохранения архива");
         System.out.println("Например: " + "C:\\name.zip");
@@ -50,7 +49,7 @@ public class Main {
      */
     private static String archiving(){
         String name = enterPath();
-        String output = output_path();
+        String output = outputPath();
         //Создание архива
         try (ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(output));
              //Считывание из файла
